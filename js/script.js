@@ -24,20 +24,20 @@ function adaptiveFunction(e) {
         if(!menuBody.classList.contains('done')) {
             topHeader.insertAdjacentElement('afterbegin', menuBody);
             menuBody.classList.add('done');
+            if(!searchForm.classList.contains('done')) {
+              menuBody.insertAdjacentElement('afterbegin', searchForm);
+              searchForm.classList.add('done');
+            }
         }
-        if(!searchForm.classList.contains('done') && menuBody.classList.contains('done')) {
-         menuBody.insertAdjacentElement('afterbegin', searchForm);
-         searchForm.classList.add('done');
-     }
     } else {
         if(menuBody.classList.contains('done')) {
             headerRow.insertAdjacentElement('afterbegin', menuBody);
             menuBody.classList.remove('done');
+            if(searchForm.classList.contains('done')) {
+              headerRow.insertAdjacentElement('beforeend', searchForm);
+              searchForm.classList.remove('done');
+             }
         }
-        if(searchForm.classList.contains('done') && !menuBody.classList.contains('done')) {
-         headerRow.insertAdjacentElement('beforeend', searchForm);
-         searchForm.classList.remove('done');
-     }
     }
 }
 
