@@ -40,7 +40,7 @@ function adaptiveFunction(e) {
         }
     }
 }
-
+adaptiveFunction(mediaQuery);
 mediaQuery.addEventListener('change', adaptiveFunction);
 // </События при изменении окна браузера>
 // =================================================================================
